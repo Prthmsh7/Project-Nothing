@@ -1,6 +1,5 @@
 # Semi-colon
 
-
 packages that we need to install :
 
 npm i next-themes
