@@ -1,6 +1,7 @@
 import {initialProfile} from "@/lib/initial-profile";
 import {db} from "@/lib/db"
 
+
 import {redirect} from "next/navigation"
 
 const SetupPage = async () => {
@@ -17,7 +18,7 @@ const server = await db.server.findFirst({
 })
 
 if(server){
-    return redirect
+    return redirect('/servers/${server.id}');
 }
 
     return <div>Create a server</div>
