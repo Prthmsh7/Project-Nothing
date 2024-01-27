@@ -1,5 +1,7 @@
 # Semi-colon
 
+Project-name : Nothing
+
 packages that we need to install :
 
 npm i next-themes
