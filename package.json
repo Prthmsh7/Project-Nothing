@@ -1,8 +1,14 @@
 {
   "devDependencies": {
-    "prisma": "^5.8.1"
+    "prisma": "^5.8.1",
+    "tailwindcss": "^3.4.1"
   },
   "dependencies": {
-    "mysql": "^2.18.1"
+    "@clerk/nextjs": "^4.29.5",
+    "mysql": "^2.18.1",
+    "next": "^14.1.0",
+    "npm-install-all": "^1.1.21",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
