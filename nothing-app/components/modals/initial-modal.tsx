@@ -16,6 +16,14 @@ import {
     DialogContent
 } from "@/components/ui/dialog"
 
+const formSchema = z.object({
+    name : z.string().min(1,{
+        message: "Server name is required."
+    }),
+    imageUrl: z.string().min(1,{
+        message:"Server image is required"
+    })
+});
 import {
     Form,
     FormControl,
@@ -23,10 +31,15 @@ import {
     FormItem,
     FormLabel,
     FormMessage
-} from "@/components/ui/form"
+}
+from "@/components/ui/form"
+import  {Input} from "@/components/ui/input";
+import {Button} from "@/components/ui/button";
+import { useEffect, useState } from "react";
+export const InitialModal = () => {
+    const [isMounted, setIsMounted] = useState(false);
 
-import  {Input} from "@/components/ui/input"
-import {Button} from "@/components/ui/button"
+}
 
 const formSchema = z.object({
     name: z.string().min(1,{
@@ -40,18 +53,26 @@ const formSchema = z.object({
 
 
 export const InitialModal = () => {
+
     
+    useEffect(()=> {
+        setIsMounted(true);
+    } , []);
     const form = useForm({
         resolver: zodResolver(formSchema),
         defaultValues:{
             name: "",
             imageUrl: "",
         }
-    })
+
+    });
+  
     const isLoading = form.formState.isSubmitting;
-    
-    const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        console.log(values)
+    const onSubmit = async(values: z.infer<typeof formSchema>) => {
+        console.log(values);
+    }
+    if (!isMounted){
+        return null;
     }
 
     return (
@@ -72,7 +93,7 @@ export const InitialModal = () => {
                                 TODO: Image upload
                             </div>
                             <FormField control={form.control} name="name" render={({ field}) => {
-                                <FormItem>
+                                return <FormItem>
                                     <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-secondary/70">
                                         Class Name
                                     </FormLabel>
@@ -81,9 +102,8 @@ export const InitialModal = () => {
                                             disabled={isLoading}
                                             className="bg-zinc-300/50 border-0 focus-visible:ring-0 text-black focus-visible:ring-offset-0"
                                             placeholder="Enter class name"
-                                            {...field}
-                                        />
-                                        
+                                            {...field} />
+
                                     </FormControl>
                                     <FormMessage/>
                                 </FormItem>;
