@@ -4,7 +4,6 @@ import { UploadDropzone } from "@/lib/uploadthing"
 import "@uploadthing/react/styles.css"
 import * as z from "zod";
 import { zodResolver } from '@hookform/resolvers/zod';
-import { object, string } from 'zod';
 import {useEffect,useState} from "react";
 import {useForm} from "react-hook-form";
 
@@ -35,8 +34,7 @@ import {
 } 
 from "@/components/ui/form"
 import  {Input} from "@/components/ui/input";
-import {Button} from "@/components/ui/button";
-import { useEffect, useState } from "react";
+import {Button} from "@/components/ui/button";;
 import { FileUpload } from "@/components/file-upload";
 
 export const InitialModal = () => {
