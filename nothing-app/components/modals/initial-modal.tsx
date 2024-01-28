@@ -7,7 +7,6 @@ import "@uploadthing/react/styles.css"
 import * as z from "zod";
 import { zodResolver } from '@hookform/resolvers/zod';
 
-import { object, string } from 'zod';
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
@@ -75,6 +74,7 @@ export const InitialModal = () => {
     if (!isMounted){
         return null;
     }
+
 
   return (
     <Dialog open>
