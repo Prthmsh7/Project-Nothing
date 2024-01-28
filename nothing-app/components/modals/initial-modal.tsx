@@ -31,8 +31,7 @@ import {
     FormItem,
     FormLabel,
     FormMessage
-
-} 
+}
 from "@/components/ui/form"
 import  {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
@@ -52,9 +51,6 @@ const formSchema = z.object({
 })
 
 
-const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values)
-}
 
 export const InitialModal = () => {
 
@@ -70,8 +66,7 @@ export const InitialModal = () => {
         }
 
     });
-
-    
+  
     const isLoading = form.formState.isSubmitting;
     const onSubmit = async(values: z.infer<typeof formSchema>) => {
         console.log(values);
@@ -79,6 +74,7 @@ export const InitialModal = () => {
     if (!isMounted){
         return null;
     }
+
     return (
         <Dialog open>
             <DialogContent className="bg-white text-black p-0 overflow-hidden">
