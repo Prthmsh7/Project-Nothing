@@ -6,6 +6,7 @@
   "dependencies": {
     "@clerk/nextjs": "^4.29.5",
     "@hookform/resolvers": "^3.3.4",
+    "@prisma/client": "^5.8.1",
     "@radix-ui/react-dialog": "^1.0.5",
     "@uploadthing/react": "^6.2.2",
     "mysql": "^2.18.1",

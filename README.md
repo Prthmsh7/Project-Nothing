@@ -20,6 +20,6 @@ npx prisma init
 
 npm install -g prisma
 prisma generate
- npx prisma db push
+npx prisma db push
 
 plantscale-db :- pscale_pw_V92jUhQjyFuBrNh1UVy9ezOJHrPh5hn9jIiLmzPMlPe
