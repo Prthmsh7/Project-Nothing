@@ -1,6 +1,6 @@
 "use client";
 
-import { UploadDropzone } from "@/lib/uplaodthing"
+import { UploadDropzone } from "@/lib/uploadthing"
 import "@uploadthing/react/styles.css"
 import * as z from "zod";
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -37,7 +37,6 @@ import {
 import  {Input} from "@/components/ui/input"
 import {Button} from "@/components/ui/button"
 import { FileUpload } from "@/components/file-upload";
-import { useEffect, useState } from "react";
 
 export const InitialModal = () => {
     const [isMounted, setIsMounted] = useState(false);
