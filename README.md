@@ -39,3 +39,9 @@ DATABASE_URL='mysql://tgaclwaqblj6cwifsi84:pscale_pw_P9p4dTbAdRob5Mb3HicpLD0LL0r
 
 npm install uploadthing @uploadthing/react
 
+
+
+Video Features :
+
+npm install livekit-server-sdk livekit-client @livekit/components-react @livekit/components-styles --save
+
