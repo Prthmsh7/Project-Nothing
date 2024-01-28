@@ -2,9 +2,9 @@
 
 import * as z from "zod";
 
-// import {zodResolver} from "@hookform/resolver/zod";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { object, string } from 'zod';
 
-import {zodResolver} from "@hookform/resolver/zod";
 
 
 import {
@@ -18,6 +18,8 @@ import {
 import {useForm} from "react-hook-form";
 
 export const InitialModal = () => {
+
+    
     const form = useForm({
         defaultValues:{
             name: "",
