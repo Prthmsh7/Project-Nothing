@@ -22,4 +22,5 @@ npm install -g prisma
 prisma generate
 npx prisma db push
 
-plantscale-db :- pscale_pw_V92jUhQjyFuBrNh1UVy9ezOJHrPh5hn9jIiLmzPMlPe
+plantscale-db :- pscale_pw_P9p4dTbAdRob5Mb3HicpLD0LL0rE0dJwvNU62IpGL4r
+DATABASE_URL='mysql://tgaclwaqblj6cwifsi84:pscale_pw_P9p4dTbAdRob5Mb3HicpLD0LL0rE0dJwvNU62IpGL4r@aws.connect.psdb.cloud/semi-colon?sslaccept=strict'
