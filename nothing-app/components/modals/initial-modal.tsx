@@ -1,7 +1,9 @@
 "use client";
 
-import { UploadDropzone } from "@/lib/uplaodthing";
-import "@uploadthing/react/styles.css";
+import axios from "axios";
+import { UploadDropzone } from "@/lib/uploadthing"
+import "@uploadthing/react/styles.css"
+
 import * as z from "zod";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { object, string } from 'zod';
@@ -27,30 +29,51 @@ const formSchema = z.object({
 });
 
 import {
-  Form,
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage
-} from "@/components/ui/form";
 
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage
+} 
+from "@/components/ui/form"
+import  {Input} from "@/components/ui/input";
+import {Button} from "@/components/ui/button";
+import { useEffect, useState } from "react";
 import { FileUpload } from "@/components/file-upload";
+import { useRouter } from "next/navigation";
 
 export const InitialModal = () => {
-  const [isMounted, setIsMounted] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
+    const router = useRouter();
+    
+    useEffect(()=> {
+        setIsMounted(true);
+    } , []);
+    const form = useForm({
+        resolver: zodResolver(formSchema),
+        defaultValues:{
+            name: "",
+            imageUrl: "",
+        }
+    });
+    
+    const isLoading = form.formState.isSubmitting;
+    const onSubmit = async(values: z.infer<typeof formSchema>) => {
+        try{
+            await axios.post("/api/servers",values);
 
-  const form = useForm({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      name: "",
-      imageUrl: "",
+            form.reset();
+            router.refresh();
+            window.location.reload();
+        } catch(error){
+        console.log(error);
+        }
+    }
+    if (!isMounted){
+        return null;
     }
   });
 
