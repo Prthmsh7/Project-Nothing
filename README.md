@@ -32,6 +32,16 @@ npx prisma db push
 
 npm install @radix-ui/react-label
 
+npm i axios
+
+npm i uuid
+
+npm i -D @types/uuid
+
+npx shadcn-ui@latest add tooltip
+npx shadcn-ui@latest add separator
+
+
 plantscale-db :- pscale_pw_P9p4dTbAdRob5Mb3HicpLD0LL0rE0dJwvNU62IpGL4r
 
 DATABASE_URL='mysql://tgaclwaqblj6cwifsi84:pscale_pw_P9p4dTbAdRob5Mb3HicpLD0LL0rE0dJwvNU62IpGL4r@aws.connect.psdb.cloud/semi-colon?sslaccept=strict'
