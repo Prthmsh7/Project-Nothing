@@ -22,4 +22,7 @@ npm install -g prisma
 prisma generate
 npx prisma db push
 
+ npm install @radix-ui/react-label
+
+
 plantscale-db :- pscale_pw_V92jUhQjyFuBrNh1UVy9ezOJHrPh5hn9jIiLmzPMlPe
