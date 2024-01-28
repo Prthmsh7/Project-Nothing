@@ -40,7 +40,6 @@ import {
 from "@/components/ui/form"
 import  {Input} from "@/components/ui/input";
 import {Button} from "@/components/ui/button";
-import { useEffect, useState } from "react";
 import { FileUpload } from "@/components/file-upload";
 import { useRouter } from "next/navigation";
 
@@ -75,17 +74,6 @@ export const InitialModal = () => {
     if (!isMounted){
         return null;
     }
-  });
-
-  const isLoading = form.formState.isSubmitting;
-
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values);
-  };
-
-  if (!isMounted) {
-    return null;
-  }
 
   return (
     <Dialog open>

@@ -1,9 +1,9 @@
-import { currentProfile } from "@/lib/current-profile"
+import { currentprofile } from "@/lib/current-profile"
 import { redirect } from "next/navigation"
 import {db} from "@/lib/db"
 
-export const NavigationSidebar = () => {
-const profile = await currentProfile()
+export const NavigationSidebar = async() => {
+const profile = await currentprofile()
 
     if(!profile){
         return redirect("/")
