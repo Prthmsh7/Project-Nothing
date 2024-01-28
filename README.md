@@ -30,9 +30,12 @@ prisma generate
 
 npx prisma db push
 
+npm install @radix-ui/react-label
+
 plantscale-db :- pscale_pw_P9p4dTbAdRob5Mb3HicpLD0LL0rE0dJwvNU62IpGL4r
 
 DATABASE_URL='mysql://tgaclwaqblj6cwifsi84:pscale_pw_P9p4dTbAdRob5Mb3HicpLD0LL0rE0dJwvNU62IpGL4r@aws.connect.psdb.cloud/semi-colon?sslaccept=strict'
 
 
 npm install uploadthing @uploadthing/react
+
