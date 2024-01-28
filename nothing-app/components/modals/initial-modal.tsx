@@ -3,7 +3,6 @@
 import * as z from "zod";
 
 import { zodResolver } from '@hookform/resolvers/zod';
-import { object, string } from 'zod';
 import {useForm} from "react-hook-form";
 
 
@@ -25,6 +24,7 @@ import {
     FormLabel,
     FormMessage
 } from "@/components/ui/form"
+
 import  {Input} from "@/components/ui/input"
 import {Button} from "@/components/ui/button"
 
@@ -38,13 +38,11 @@ const formSchema = z.object({
 })
 
 
-const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values)
-}
 
 export const InitialModal = () => {
     
     const form = useForm({
+        resolver: zodResolver(formSchema),
         defaultValues:{
             name: "",
             imageUrl: "",
@@ -52,6 +50,10 @@ export const InitialModal = () => {
     })
     const isLoading = form.formState.isSubmitting;
     
+    const onSubmit = async (values: z.infer<typeof formSchema>) => {
+        console.log(values)
+    }
+
     return (
         <Dialog open>
             <DialogContent className="bg-white text-black p-0 overflow-hidden">
@@ -83,7 +85,8 @@ export const InitialModal = () => {
                                         />
                                         
                                     </FormControl>
-                                </FormItem>
+                                    <FormMessage/>
+                                </FormItem>;
                             }}/>
                         </div>
                         <DialogFooter className="bg-gray-100 px-6 py-4">
