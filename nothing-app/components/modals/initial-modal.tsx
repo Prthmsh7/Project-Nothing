@@ -28,8 +28,21 @@ import {
 import  {Input} from "@/components/ui/input"
 import {Button} from "@/components/ui/button"
 
-export const InitialModal = () => {
+const formSchema = z.object({
+    name: z.string().min(1,{
+        message:"Server name is required."
+    }),
+    imageUrl: z.string().min(1,{
+        message:"Server image is required"
+    })
+})
 
+
+const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    console.log(values)
+}
+
+export const InitialModal = () => {
     
     const form = useForm({
         defaultValues:{
@@ -37,6 +50,7 @@ export const InitialModal = () => {
             imageUrl: "",
         }
     })
+    const isLoading = form.formState.isSubmitting;
     
     return (
         <Dialog open>
