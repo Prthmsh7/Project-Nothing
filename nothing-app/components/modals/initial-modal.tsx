@@ -75,17 +75,6 @@ export const InitialModal = () => {
     if (!isMounted){
         return null;
     }
-  });
-
-  const isLoading = form.formState.isSubmitting;
-
-  const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log(values);
-  };
-
-  if (!isMounted) {
-    return null;
-  }
 
   return (
     <Dialog open>
