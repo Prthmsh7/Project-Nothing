@@ -6,8 +6,8 @@ import "@uploadthing/react/styles.css"
 
 import * as z from "zod";
 import { zodResolver } from '@hookform/resolvers/zod';
+import {useModal} from "@/hooks/use-modal-store";
 
-import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
 import {
@@ -43,14 +43,13 @@ import {Button} from "@/components/ui/button";;
 import { FileUpload } from "@/components/file-upload";
 import { useRouter } from "next/navigation";
 
-export const InitialModal = () => {
-    const [isMounted, setIsMounted] = useState(false);
+export const CreateServerModal = () => {
+    const {isOpen, onClose, type} = useModal()
 
     const router = useRouter();
+
+    const isModalopen = isOpen && type === "createServer"
     
-    useEffect(()=> {
-        setIsMounted(true);
-    } , []);
     const form = useForm({
         resolver: zodResolver(formSchema),
         defaultValues:{
@@ -66,18 +65,18 @@ export const InitialModal = () => {
 
             form.reset();
             router.refresh();
-            window.location.reload();
         } catch(error){
         console.log(error);
         }
     }
-    if (!isMounted){
-        return null;
+
+    const handleClose = () => {
+      form.reset();
+      onClose();
     }
 
-
   return (
-    <Dialog open>
+    <Dialog open={isModalopen} onOpenChange={handleClose}>
       <DialogContent className="bg-white text-black p-0 overflow-hidden">
         <DialogHeader className="pt-8 px-6">
           <DialogTitle className="text-2xl text-center font-bold">
