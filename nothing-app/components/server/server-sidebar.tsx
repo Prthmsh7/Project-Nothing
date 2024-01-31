@@ -3,6 +3,7 @@ import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 import { Channel, ChannelType } from "@prisma/client";
 import { channel } from "diagnostics_channel";
+import { ServerHeader } from "./server-header";
 interface ServerSidebarProps{
     serverId:string;
 }
@@ -47,7 +48,10 @@ if(!server){
 const role= server.members.find((member) => member.profileId === profile.id) ?.role;
     return (
         <div className="fle flex-col h-full text-primary w-full dark:bg-[#2B2D31] bg-[#F2F3F5]">
-            Server Sidebar Component
+          <ServerHeader
+          server={server}
+          role={role}
+          />
         </div>
     )
 }
