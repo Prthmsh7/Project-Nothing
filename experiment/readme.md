@@ -41,3 +41,64 @@ Provide instructions on how to install and set up your project. Include any depe
 ```bash
 # Example installation command or steps
 npm install nothing-platform
+
+
+# Tech Stacks
+
+## Frontend
+- React.js
+- Next.js
+- Shadcn UI
+- Tailwind
+- Redux
+
+## Backend
+- Node.js
+
+## Real-time Communication
+- Socket.io
+- Livekit
+
+## Database
+- Prisma
+- PlanetScale
+- MySQL
+
+## File Upload
+- Uploadthing
+
+## Version Control
+- Git
+- GitHub
+
+## Text Editors
+- Vim
+- Visual Studio Code
+- Sublime Text Editor
+
+# Required Packages
+
+To set up the project, install the following packages using the provided commands:
+
+```bash
+npm i next-themes
+npx shadcn-ui@latest add dropdown-menu
+npx shadcn-ui@latest add dialog
+npx shadcn-ui@latest add input
+npx shadcn-ui@latest add form
+npm install @clerk/nextjs
+npm install react-hook-form
+npm install zod
+npm i -D prisma
+npx prisma init
+npm install -g prisma
+prisma generate
+npx prisma db push
+npm i axios
+npm install @radix-ui/react-label
+npm i axios
+npm i uuid
+npm i -D @types/uuid
+npx shadcn-ui@latest add tooltip
+npx shadcn-ui@latest add separator
+npm install uploadthing @uploadthing/react
