@@ -61,6 +61,8 @@ npm install @radix-ui/react-label
 npm i axios
 npm i uuid
 npm i -D @types/uuid
+npm i socket.io
+npm i socket.io-client
 npx shadcn-ui@latest add tooltip
 npx shadcn-ui@latest add separator
 npm install uploadthing @uploadthing/react

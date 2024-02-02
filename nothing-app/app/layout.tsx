@@ -1,11 +1,12 @@
-import type { Metadata } from "next";
-import "@uploadthing/react/styles.css";
-import { Open_Sans } from "next/font/google";
 import "./globals.css";
+import type { Metadata } from "next";
+// import "@uploadthing/react/styles.css";
+import { Open_Sans } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/provider/theme-provider"
 import {cn} from '@/lib/utils'
 import { ModalProvider } from "@/components/provider/modal-provider";
+import { SocketProvider } from "@/components/provider/socket-provider";
 const font = Open_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -28,8 +29,10 @@ export default function RootLayout({
         enableSystem={false}
         storageKey="semi-colon-theme"
         >
+        <SocketProvider>
           <ModalProvider/>
-        {children}
+          {children}
+        </SocketProvider>
         </ThemeProvider>
         </body>
     </html>
