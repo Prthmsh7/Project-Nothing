@@ -14,19 +14,17 @@ type SocketContextType = {
     isConnected: boolean;
 }
 
-const SokcetContext = createContext<SocketContextType>({
+const SocketContext = createContext<SocketContextType>({
     socket: null,
     isConnected: false
 });
 
 export const useSocket = () => {
-    return useContext(SocketContext)
+    return useContext(SocketContext);
 }
 
-export const SocketProvider = ({
-    children
-}:{
-    cildren: React.ReactNode
+export const SocketProvider = ({children}:{
+    children: React.ReactNode
 }
 ) =>{
     const [socket,setSocket] = useState(null);
@@ -54,8 +52,8 @@ export const SocketProvider = ({
     },[])
 
     return(
-        <SokcetContext.Provider value={{socket, isConnected}}>
+        <SocketContext.Provider value={{socket, isConnected}}>
             {children}
-        </SokcetContext.Provider>
+        </SocketContext.Provider>
     )
 }
