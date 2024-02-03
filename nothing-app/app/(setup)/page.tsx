@@ -13,7 +13,7 @@ const server = await db.server.findFirst({
     where:{
         members:{
             some:{
-                profileId: profile.id
+                profileId: profile?.id
             }
         }
     }
