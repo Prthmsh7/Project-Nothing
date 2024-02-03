@@ -45,29 +45,61 @@ Text Editors: Vim , Visual Studio Code , Sublime Text Editor
 -------------------------------------------------------------------------------------------
 packages that we need to install :
 
-npm i next-themes
-npx shadcn-ui@latest add dropdown-menu
-npx shadcn-ui@latest add dialog
-npx shadcn-ui@latest add input
-npx shadcn-ui@latest add form
+npm install tailwindcss-animate class-variance-authority clsx tailwind-merge
+
+npm install lucide-react
+
+npm install @radix-ui/react-icons
+
+npx shadcn-ui@latest add button
+
 npm install @clerk/nextjs
-npm install react-hook-form
-npm install zod
-npm i -D prisma
-npx prisma init
+
+npm i next-themes
+
+npx shadcn-ui@latest add dropdown-menu
+
 npm install -g prisma
-prisma generate
-npx prisma db push
+
+npm i -D prisma
+
+npx prisma init
+
+npx prisma generate
+
+npx prisma db push 
+
+npm i @prisma/client
+
+npx shadcn-ui@latest add dialog
+
+npx shadcn-ui@latest add input
+
+npx shadcn-ui@latest add form
+
+npm install uploadthing @uploadthing/react react-dropzone
+
 npm i axios
-npm install @radix-ui/react-label
-npm i axios
+
 npm i uuid
+
 npm i -D @types/uuid
+
 npm i socket.io
 npm i socket.io-client
+
 npx shadcn-ui@latest add tooltip
+
 npx shadcn-ui@latest add separator
-npm install uploadthing @uploadthing/react
+
+npx shadcn-ui@latest add scroll-area
+
+npm i zustand
+
+
+npm install react-hook-form
+npm install zod
+npm install @radix-ui/react-label
 
 ---------------------------------------------------------------------
 DATABASE RELATED STUFF :
