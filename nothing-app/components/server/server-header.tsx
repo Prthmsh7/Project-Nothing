@@ -12,7 +12,6 @@ interface ServerHeaderProps{
  export const ServerHeader =({server , role}: ServerHeaderProps) => {
 
     const { onOpen } = useModal()
-
    const isAdmin = role === MemberRole.ADMIN;
    const isModerator = isAdmin || role === MemberRole.MODERATOR;
     return (
@@ -39,6 +38,7 @@ interface ServerHeaderProps{
                 )}
                 {isAdmin && (
                         <DropdownMenuItem
+                        onClick={() => onOpen("editServer" , {server})}
                         className=" px-3 py-2 text-sm cursor-pointer">
                             Server Setting
                             <Settings className="h-4 w-4 ml-auto"/>
