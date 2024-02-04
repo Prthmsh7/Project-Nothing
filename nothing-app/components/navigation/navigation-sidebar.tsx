@@ -1,5 +1,3 @@
-
-
 import { redirect } from "next/navigation";
 
 import { currentprofile } from "@/lib/current-profile";
