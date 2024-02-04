@@ -101,6 +101,8 @@ npx shadcn-ui@latest add avatar
 
 npm i query-string
 
+npx shadcn-ui@latest add select
+
 npm install react-hook-form
 npm install zod
 npm install @radix-ui/react-label
