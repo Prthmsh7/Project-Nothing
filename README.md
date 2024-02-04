@@ -86,6 +86,7 @@ npm i uuid
 npm i -D @types/uuid
 
 npm i socket.io
+
 npm i socket.io-client
 
 npx shadcn-ui@latest add tooltip
@@ -96,6 +97,9 @@ npx shadcn-ui@latest add scroll-area
 
 npm i zustand
 
+npx shadcn-ui@latest add avatar
+
+npm i query-string
 
 npm install react-hook-form
 npm install zod
