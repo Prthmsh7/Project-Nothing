@@ -103,6 +103,8 @@ npm i query-string
 
 npx shadcn-ui@latest add select
 
+npx shadcn-ui@latest add sheet
+
 npm install react-hook-form
 npm install zod
 npm install @radix-ui/react-label
