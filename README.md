@@ -95,9 +95,11 @@ npx shadcn-ui@latest add separator
 
 npx shadcn-ui@latest add scroll-area
 
-npm i zustand
-
 npx shadcn-ui@latest add avatar
+
+npx shadcn-ui@latest add command
+
+npm i zustand
 
 npm i query-string
 
