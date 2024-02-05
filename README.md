@@ -95,9 +95,11 @@ npx shadcn-ui@latest add separator
 
 npx shadcn-ui@latest add scroll-area
 
-npm i zustand
-
 npx shadcn-ui@latest add avatar
+
+npx shadcn-ui@latest add command
+
+npm i zustand
 
 npm i query-string
 
@@ -114,6 +116,9 @@ npm i emoji-mart @emoji-mart/data @emoji-mart/react
 npm install react-hook-form
 npm install zod
 npm install @radix-ui/react-label
+
+npm install @emoji-mart/react
+npm install @tanstack/react-query
 
 ---------------------------------------------------------------------
 DATABASE RELATED STUFF :
