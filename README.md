@@ -107,6 +107,12 @@ npx shadcn-ui@latest add select
 
 npx shadcn-ui@latest add sheet
 
+npx shadcn-ui@latest add badge
+
+npx shadcn-ui@latest add popover
+
+npm i emoji-mart @emoji-mart/data @emoji-mart/react
+
 npm install react-hook-form
 npm install zod
 npm install @radix-ui/react-label
