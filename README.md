@@ -120,6 +120,9 @@ npm install @radix-ui/react-label
 npm install @emoji-mart/react
 npm install @tanstack/react-query
 
+npm install date-fns@latest
+npm install @emoji-mart/data
+
 ---------------------------------------------------------------------
 DATABASE RELATED STUFF :
 
