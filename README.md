@@ -111,6 +111,9 @@ npm install react-hook-form
 npm install zod
 npm install @radix-ui/react-label
 
+npm install @emoji-mart/react
+npm install @tanstack/react-query
+
 ---------------------------------------------------------------------
 DATABASE RELATED STUFF :
 
