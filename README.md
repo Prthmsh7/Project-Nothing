@@ -1,4 +1,5 @@
 # Silicon
+This is the first hackathon project by Team Silicon.
 
 Team Name - Silicon
 --------------------------------------------------------------------------
