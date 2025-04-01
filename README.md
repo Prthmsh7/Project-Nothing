@@ -1,141 +1,131 @@
-# Silicon
-This is the first hackathon project by Team Silicon.
---------------------------------------------------------------------------
-Team Name - Silicon
---------------------------------------------------------------------------
-Team Members :
-   - Prathmesh Shukla
-   - Ayush Mati
-   - Manas Singh
---------------------------------------------------------------------------
-Project-name: Nothing
---------------------------------------------------------------------------
-Project Description :
+# NOTHING - The Ultimate Study Oasis
 
-"NOTHING: Because Who Needs Separate Apps for Everything? Welcome to the Ultimate Study Oasis, Where We've Merged Your Study Groups, Classroom, and Your Daily Chat Drama into... Well, NOTHING! Say goodbye to the joy of juggling multiple apps, and embrace the simplicity of having it all in one place – where doing NOTHING is actually doing everything.
+NOTHING is a comprehensive platform designed to streamline the academic experience by combining study group management, classroom interactions, and messaging into a single unified interface.
 
-Connect with your classmates, exchange notes, and engage in scholarly banter without the hassle of multiple messaging apps. Zoom into your classes without leaving our app, because switching tabs is just too mainstream. With cutting-edge security, we've eradicated the cloak of anonymity; now, your enrollment number is your VIP pass to knowledge.
+## Project Overview
 
-NOTHING – where the absence of complications meets the presence of everything. Because who needs a variety of platforms when you can have NOTHING? Join the revolution; because in this space, NOTHING means everything you need for academic success. Don't just do something, do NOTHING!"
+NOTHING eliminates the need for multiple applications by providing:
 
-Note: Adjustments can be made based on your preferences, and you can modify the tone to better suit your audience.
+- **Server-based Study Groups**: Create and join servers (study groups) with various channels for different topics or subjects.
+- **Text Communication**: Chat communication in both group and direct message settings.
+- **File Sharing**: Share notes, documents, and images directly within the platform.
+- **Secure Environment**: Authentication based on institutional enrollment numbers ensures a secure academic space.
 
---------------------------------------------------------------------------------------------
-Problem Statement : 
+## Features
 
-In the journey of developing our groundbreaking project, "NOTHING," we encountered a myriad of challenges that tested the limits of our technical prowess. Embracing the latest web technologies, we ventured into uncharted territories, blending innovation with complexity to create an all-encompassing educational platform.
+- **Authentication**: User authentication powered by Clerk
+- **Server Management**: Create, join, and manage servers with different channels
+- **Channel Types**: Text channels for group discussions
+- **Real-time Communication**: Socket.IO for text messages
+- **Responsive Design**: Works on both desktop and mobile devices
+- **Dark Mode**: Toggle between light and dark themes
 
-The integration of real-time communication posed a significant hurdle. Implementing technologies such as Socket.io, Node.js, and Livekit for seamless video conferencing demanded meticulous attention to detail. Coordinating these elements required not just technical expertise but a strategic approach to ensure a smooth and uninterrupted user experience.
+## Tech Stack
 
-The intricacies of managing data further intensified the challenge. Connecting the database with Prisma and PlanetScale, while also incorporating MySQL, demanded a delicate balance. Navigating through different database technologies required careful consideration of compatibility and optimization to uphold the platform's performance standards.
+### Frontend
+- React.js
+- Next.js 13 with App Router
+- Shadcn UI
+- Tailwind CSS
+- Zustand for state management
 
-On the frontend, the utilization of React.js, Next.js, and Shadcn UI brought forth its own set of challenges. Integrating these frameworks harmoniously and ensuring they work seamlessly with the backend technologies was a puzzle that required patience and expertise.
+### Backend
+- Next.js API Routes
+- Socket.IO
 
-The incorporation of Tailwind and Redux added another layer of complexity. Striking the right balance between design flexibility and state management became a delicate dance that we continue to refine as the project evolves.
+### Database
+- Prisma ORM
+- MySQL (via PlanetScale)
 
-Additionally, the utilization of Uploadthing for seamless file uploads introduced its own set of intricacies, requiring us to find the sweet spot between user convenience and technical efficiency.
+### File Upload
+- Uploadthing
 
-While the challenges were formidable, the dedication of our team has propelled us forward. As the project is still under development, we remain committed to overcoming each obstacle, refining our approach, and ultimately delivering a revolutionary platform that seamlessly amalgamates diverse web technologies for an unparalleled educational experience.
+## Setup Instructions
 
---------------------------------------------------------------------------------------------
-Tech Stacks : 
+### Prerequisites
 
-Frontend: React.js , Next.js , Shadcn UI ,Tailwind , Redux
-Backend: Node.js 
-Real-time Communication: Socket.io , Livekit
-Database: Prisma , PlanetScale , MySQL
-File Upload: Uploadthing
-Version Control: Git , GitHub
-Text Editors: Vim , Visual Studio Code , Sublime Text Editor
+- Node.js installed on your machine
+- A PlanetScale account (or any MySQL database)
+- A Clerk account for authentication
+- An Uploadthing account for file uploads
 
--------------------------------------------------------------------------------------------
-packages that we need to install :
+### Installation
 
-npm install tailwindcss-animate class-variance-authority clsx tailwind-merge
+1. Clone the repository:
+   ```
+   git clone https://your-repository-url.git
+   cd nothing-app
+   ```
 
-npm install lucide-react
+2. Install dependencies:
+   ```
+   npm install
+   ```
 
-npm install @radix-ui/react-icons
+3. Set up your environment variables by creating a `.env` file based on the provided `.env.example`:
+   ```
+   # Clerk Authentication
+   NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=your-clerk-publishable-key
+   CLERK_SECRET_KEY=your-clerk-secret-key
+   NEXT_PUBLIC_CLERK_SIGN_IN_URL=/sign-in
+   NEXT_PUBLIC_CLERK_SIGN_UP_URL=/sign-up
+   NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=/
+   NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=/
 
-npx shadcn-ui@latest add button
+   # Database (PlanetScale)
+   DATABASE_URL='mysql://username:password@hostname/database?sslaccept=strict'
 
-npm install @clerk/nextjs
+   # Uploadthing
+   UPLOADTHING_SECRET=your-uploadthing-secret
+   UPLOADTHING_APP_ID=your-uploadthing-app-id
+   ```
 
-npm i next-themes
+4. Push the Prisma schema to your database:
+   ```
+   npx prisma db push
+   ```
 
-npx shadcn-ui@latest add dropdown-menu
+5. Run the development server:
+   ```
+   npm run dev
+   ```
 
-npm install -g prisma
+6. Open `http://localhost:3000` in your browser to see the application.
 
-npm i -D prisma
+## User Flow
 
-npx prisma init
+1. Sign up or sign in with Clerk authentication
+2. Create your first server (study group)
+3. Invite others to your server using the invite code
+4. Create channels for different topics or subjects
+5. Start discussions in text channels
+6. Share files and collaborate with other users
 
-npx prisma generate
+## Project Structure
 
-npx prisma db push 
+- `/app`: Next.js app directory containing routes and API endpoints
+- `/components`: React components organized by functionality
+- `/hooks`: Custom React hooks for state management and API calls
+- `/lib`: Utility functions and database connection
+- `/prisma`: Database schema and migrations
 
-npm i @prisma/client
+## Key Components
 
-npx shadcn-ui@latest add dialog
+### Server Components
+- **ServerSidebar**: A navigation sidebar component that displays all channels within a server. Features:
+  - Dynamic channel list fetched from the API
+  - Active channel highlighting
+  - Responsive design that collapses on mobile
+  - Loading states for better user experience
 
-npx shadcn-ui@latest add input
+### UI Components
+- **ScrollArea**: A custom scrollable area with stylized scrollbars
+- **Separator**: A visual divider for UI sections
 
-npx shadcn-ui@latest add form
+## Authors
 
-npm install uploadthing @uploadthing/react react-dropzone
+- Your Name
 
-npm i axios
+## License
 
-npm i uuid
-
-npm i -D @types/uuid
-
-npm i socket.io
-
-npm i socket.io-client
-
-npx shadcn-ui@latest add tooltip
-
-npx shadcn-ui@latest add separator
-
-npx shadcn-ui@latest add scroll-area
-
-npx shadcn-ui@latest add avatar
-
-npx shadcn-ui@latest add command
-
-npm i zustand
-
-npm i query-string
-
-npx shadcn-ui@latest add select
-
-npx shadcn-ui@latest add sheet
-
-npx shadcn-ui@latest add badge
-
-npx shadcn-ui@latest add popover
-
-npm i emoji-mart @emoji-mart/data @emoji-mart/react
-
-npm install react-hook-form
-npm install zod
-npm install @radix-ui/react-label
-
-npm install @emoji-mart/react
-npm install @tanstack/react-query
-
-npm install date-fns@latest
-npm install @emoji-mart/data
-
----------------------------------------------------------------------
-DATABASE RELATED STUFF :
-
-plantscale-db :- pscale_pw_P9p4dTbAdRob5Mb3HicpLD0LL0rE0dJwvNU62IpGL4r
-
-DATABASE_URL='mysql://tgaclwaqblj6cwifsi84:pscale_pw_P9p4dTbAdRob5Mb3HicpLD0LL0rE0dJwvNU62IpGL4r@aws.connect.psdb.cloud/semi-colon?sslaccept=strict'
-
-plantscale-db :- pscale_pw_V92jUhQjyFuBrNh1UVy9ezOJHrPh5hn9jIiLmzPMlPe
-
-------------------------------------------------------------------------
+This project is licensed under the MIT License.
